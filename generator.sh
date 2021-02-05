@@ -51,7 +51,7 @@ function generate_coin {
 
 	# Exit if base coin does not exists
 	if [ ! -d "${BASE_COIN_PATH}" ]; then
-		echo "Base coin does not exists"
+		echo "Base coin does not exist"
 		echo "Abort clone generation"
 		exit 4
 	fi
@@ -140,7 +140,7 @@ if [[ "${CONFIG_FILE}" != /* ]]; then
 fi
 
 if [ ! -f ${CONFIG_FILE} ]; then
-	echo "ERROR: config file does not exits"
+	echo "ERROR: config file does not exist"
 	exit
 fi
 
