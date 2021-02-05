@@ -15,20 +15,8 @@ if [ "$OSTYPE" != "msys" ]; then
 fi
 
 # Set directory vars
-# . "vars.cfg" content added below instead of cfg file
-export PROJECT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-export WORK_FOLDERS_PATH="${PROJECT_DIR}/generated_files"
-export SCRIPTS_PATH="${PROJECT_DIR}"
-export EXTENSIONS_PATH="${SCRIPTS_PATH}/extensions"
-export TESTS_PATH="${SCRIPTS_PATH}/tests"
-export CONFIG_PATH="${SCRIPTS_PATH}"
-export TEMP_PATH="${WORK_FOLDERS_PATH}/tmp"
-export UPDATES_PATH="${WORK_FOLDERS_PATH}/updates.forknote.monero.patch"
-export BASH_CONFIG="${WORK_FOLDERS_PATH}/config.cfg"
+. "vars.cfg" content added below instead of cfg file
 
-export CUSTOM_CUSTOMIZE_SCRIPT_PATH="${SCRIPTS_PATH}/custom/customize.sh"
-export CUSTOM_CUSTOMIZE_TESTS_PATH="${SCRIPTS_PATH}/custom/customize-test.sh"
-export CUSTOM_GENERATE_SCRIPT_PATH="${SCRIPTS_PATH}/custom/generate.sh"
 
 # Perform cleanup on exit
 function finish {
@@ -149,7 +137,7 @@ shift $((OPTIND-1))
 
 # Setting config file
 if [[ "${CONFIG_FILE}" != /* ]]; then
-	CONFIG_FILE="${CONFIG_PATH}/${CONFIG_FILE}"
+	CONFIG_FILE="${CONFIG_PATH}/vars.cfg"
 fi
 
 if [ ! -f ${CONFIG_FILE} ]; then
